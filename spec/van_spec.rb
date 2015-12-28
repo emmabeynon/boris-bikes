@@ -5,6 +5,17 @@ describe Van do
   let(:station) { double :station, broken_bikes: [bike]}
   let(:garage) { double :garage, working_bikes: [bike] }
 
+  describe '#default' do
+    it 'allows capacity to be set' do
+      bike_van = described_class.new(50)
+      expect(bike_van.capacity).to eq 50
+    end
+
+    it 'it sets a default cacpacity' do
+      expect(van.capacity).to eq Van::DEFAULT_CAPACITY
+    end
+  end
+  
   describe '#load' do
     it 'loads a bike on to the van' do
       van.load(station)
