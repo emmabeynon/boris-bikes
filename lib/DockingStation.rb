@@ -1,5 +1,5 @@
-require_relative '../lib/Bike.rb' #remove path?
-require_relative '../lib/van.rb'
+require_relative 'Bike.rb' 
+require_relative 'van.rb'
 
 class DockingStation
 

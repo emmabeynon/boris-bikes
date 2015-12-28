@@ -7,10 +7,9 @@ attr_reader :loaded_bikes
   end
 
   def load(station)
-    @loaded_bikes << station.broken_bikes
+    until station.broken_bikes.empty? do
+      @loaded_bikes << station.broken_bikes.pop
+    end
   end
 
-  # def release_broken_bike(station)
-  #   station.bikes.pop
-  # end
 end
