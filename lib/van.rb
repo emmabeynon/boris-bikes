@@ -7,7 +7,7 @@ attr_reader :loaded_bikes
   end
 
   def load(station)
-      @loaded_bikes << station.broken_bikes
+    @loaded_bikes << station.broken_bikes
   end
 
   # def release_broken_bike(station)

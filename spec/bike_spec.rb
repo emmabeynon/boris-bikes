@@ -1,11 +1,17 @@
 require 'Bike'
 
 describe Bike do
-  it { is_expected.to respond_to :working? }
+  subject(:bike) { described_class.new }
+  
+  describe '#working' do
+    it { is_expected.to respond_to :working? }
+  end
 
-  it 'reports if bike broken when docked' do
-    subject.report_broken
-    expect(subject).to be_broken
+  describe '#report_broken' do
+    it 'reports if bike broken when docked' do
+      bike.report_broken
+      expect(bike).to be_broken
+    end
   end
 
 end

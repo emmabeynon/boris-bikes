@@ -1,11 +1,11 @@
-require_relative '../lib/Bike.rb'
+require_relative '../lib/Bike.rb' #remove path?
 require_relative '../lib/van.rb'
 
 class DockingStation
 
   DEFAULT_CAPACITY = 20
 
-  attr_accessor :capacity, :broken_bikes
+  attr_reader :broken_bikes, :capacity
 
   def initialize(capacity = DEFAULT_CAPACITY)
     @bikes = []
@@ -15,7 +15,7 @@ class DockingStation
 
   def release_bike
     fail 'No bikes available!' if empty?
-    fail 'Bike is broken' if bikes.last.broken?
+    fail 'No working bikes available' if no_working_bikes?
     bikes.pop
   end
 
@@ -25,12 +25,12 @@ class DockingStation
   end
 
   def release_broken_bike
+    fail 'No broken bikes available!' if no_broken_bikes?
     bikes.each do |bike|
       @broken_bikes << bike if bike.broken?
     end
     bikes.delete_if { |bike| bike.broken? }
   end
-
 
 private
 
@@ -44,4 +44,13 @@ attr_reader :bikes
     bikes.count >= capacity
   end
 
+  def no_broken_bikes?
+    all_broken_bikes = bikes.select { |bike| bike.broken? }
+    all_broken_bikes.empty?
+  end
+
+  def no_working_bikes?
+    all_working_bikes = bikes.select { |bike| bike.working? }
+    all_working_bikes.empty?
+  end
 end
