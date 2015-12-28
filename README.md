@@ -84,11 +84,26 @@ How to run the programme
 -------------------------
 1. Launch pry or irb
 2. Require './lib/DockingStation.rb'
-3. Follow the below commands:
+3. Create as many of the below class instances as you like:
 ```
 > station = DockingStation.new
 > bike = Bike.new
+> van = Van.new
+> garage = Garage.new
 ```
+4. Interacting with the programme:
+```
+> station.dock(bike) #docks a bike
+> station.release_bike #releases an available bike
+> station.release_broken_bike #releases a broken bike for van collection
+> bike.working? #checks if a bike is working
+> bike.report_broken #reports a bike as broken_bikes
+> van.load(station) #loads all broken bikes on to the van
+> van.deliver(garage) #delivers broken bikes to the garage
+> van.collect(garage) #collects fixed bikes from the garage
+> van.distribute(station) #distributes fixed bikes to the docking station
+> garage.fix #fixes a bike
+```
+
 Further Work
 ----------------
-* Finish 21 and 22

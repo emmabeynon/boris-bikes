@@ -15,7 +15,7 @@ describe Van do
       expect(van.capacity).to eq Van::DEFAULT_CAPACITY
     end
   end
-  
+
   describe '#load' do
     it 'loads a bike on to the van' do
       van.load(station)

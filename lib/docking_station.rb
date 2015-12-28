@@ -26,13 +26,11 @@ class DockingStation
 
   def release_broken_bike
     fail 'No broken bikes available!' if no_broken_bikes?
-    bikes.each do |bike|
-      @broken_bikes << bike if bike.broken?
-    end
+    bikes.each { |bike| @broken_bikes << bike if bike.broken? }
     bikes.delete_if { |bike| bike.broken? }
   end
 
-private
+# private
 
 attr_reader :bikes
 
