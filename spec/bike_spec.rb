@@ -14,4 +14,11 @@ describe Bike do
     end
   end
 
+  describe '#fixed' do
+    it 'makes a bike work' do
+      bike.fixed
+      expect(bike.working?).to eq true
+    end
+  end
+
 end

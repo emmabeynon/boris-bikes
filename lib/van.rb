@@ -19,5 +19,8 @@ attr_reader :loaded_bikes
   end
 
   def collect(garage)
+    until garage.working_bikes.empty? do
+      @loaded_bikes << garage.working_bikes.pop
+    end
   end
 end

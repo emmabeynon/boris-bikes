@@ -122,9 +122,10 @@ describe 'User stories' do
     # As a maintainer of the system,
     # So that I can manage broken bikes and not disappoint users,
     # I'd like vans to collect working bikes from garages and distribute them to docking stations.
-    xit 'collects working bikes from the garage' do
+    it 'collects working bikes from the garage' do
       van.load(station)
       van.deliver(garage)
+      garage.fix
       van.collect(garage)
       expect(van.loaded_bikes).to eq [bike]
       expect(garage.working_bikes).to eq []
