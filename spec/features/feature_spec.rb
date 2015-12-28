@@ -1,6 +1,6 @@
 require 'van'
-require 'DockingStation'
-require 'Bike'
+require 'docking_station'
+require 'bike'
 require 'garage'
 
 describe 'User stories' do

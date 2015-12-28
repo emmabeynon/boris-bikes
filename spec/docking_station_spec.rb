@@ -1,4 +1,4 @@
-require 'DockingStation'
+require 'docking_station'
 
 describe DockingStation do
   subject(:station) { described_class.new}

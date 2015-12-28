@@ -1,6 +1,6 @@
-require_relative 'Bike.rb'
-require_relative 'van.rb'
-require_relative 'garage.rb'
+require_relative 'bike'
+require_relative 'van'
+require_relative 'garage'
 
 class DockingStation
 
