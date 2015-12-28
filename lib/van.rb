@@ -23,4 +23,11 @@ attr_reader :loaded_bikes
       @loaded_bikes << garage.working_bikes.pop
     end
   end
+
+  def distribute(station)
+    until loaded_bikes.empty? do
+      station.dock(loaded_bikes.pop)
+    end
+  end
+
 end

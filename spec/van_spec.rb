@@ -26,6 +26,14 @@ describe Van do
       van.collect(garage)
       expect(van.loaded_bikes).to eq [bike]
     end
+  end
 
+  describe '#distribute' do
+    it 'distributes bikes to the docking station' do
+      van.collect(garage)
+      allow(station).to receive(:dock) { [bike] }
+      van.distribute(station)
+      expect(van.loaded_bikes).to be_empty
+    end
   end
 end

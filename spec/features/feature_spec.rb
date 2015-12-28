@@ -131,8 +131,13 @@ describe 'User stories' do
       expect(garage.working_bikes).to eq []
     end
 
-    xit 'distributes working bikes to docking stations' do
-
+    it 'distributes working bikes to docking stations' do
+      van.load(station)
+      van.deliver(garage)
+      garage.fix
+      van.collect(garage)
+      van.distribute(station)
+      expect(van.loaded_bikes).to be_empty
     end
   end
 end
