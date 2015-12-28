@@ -14,10 +14,6 @@ Overview
 The client has asked us to build a programme for Boris Bikes; a network of Docking Stations and bikes that anyone can use.  The programme will run all the docking stations, simulate all the bikes and emulate the infrastructure such as vans and repair garages.  
 
 ```
-As a user,
-So I can find customers,
-I want to search for my customers by their surnames.
-
 As a person,
 So that I can use a bike,
 I'd like a docking station to release a bike.

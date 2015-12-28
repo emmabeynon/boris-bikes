@@ -12,4 +12,12 @@ attr_reader :loaded_bikes
     end
   end
 
+  def deliver(garage)
+    until loaded_bikes.empty? do
+      garage.received_bikes << loaded_bikes.pop
+    end
+  end
+
+  def collect(garage)
+  end
 end
